@@ -1,0 +1,14 @@
+# Generated artefacts are committed on purpose (they are reproducible from a
+# fixed seed and serve as the worked example). Everything below is not.
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.log
+
+# Never commit anything that could carry real data
+data/real/
+data/client/
+*.xlsx
+*.csv.gz

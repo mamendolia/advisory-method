@@ -1,0 +1,9 @@
+unit_id,unit_name,headcount,business_criticality
+SALES,Sales & Marketing,280,3
+FIN,Finance & Admin,140,5
+IT,IT & Infrastructure,100,5
+RND,R&D,220,4
+OPS_IT_A,Operations - Site A,440,4
+OPS_IT_B,Operations - Site B,360,3
+OPS_PL,Operations - Poland,300,3
+CORP_UK,Corporate - UK,160,4
