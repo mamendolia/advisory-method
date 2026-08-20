@@ -3,7 +3,7 @@
 
 > **SYNTHETIC DATA.** Every figure below was produced by `tools/generate_synthetic_data.py` from a fixed seed. The organisation described here does not exist. Nothing in this document derives from any client engagement, and none of it may be used as an industry benchmark.
 
-*Generated 2026-08-20 — regenerate with three commands, see README.*
+*Regenerate with three commands — see README. Output is byte-identical on any machine.*
 
 ---
 

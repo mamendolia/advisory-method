@@ -178,7 +178,12 @@ def write_csv(path, rows):
     if not rows:
         raise ValueError(f"refusing to write an empty file: {path}")
     with open(path, "w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        # lineterminator is pinned to "\n": csv.writer defaults to CRLF, which
+        # collides with the repository's LF normalisation and makes every
+        # regeneration look like a change to Git. Reproducibility is the point.
+        writer = csv.DictWriter(
+            handle, fieldnames=list(rows[0].keys()), lineterminator="\n"
+        )
         writer.writeheader()
         writer.writerows(rows)
     print(f"  {path}  ({len(rows)} rows)")

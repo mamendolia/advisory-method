@@ -14,7 +14,6 @@ Usage:
 import argparse
 import json
 import os
-from datetime import date
 
 PERIOD = "H1 2026"
 
@@ -59,7 +58,11 @@ def build(scores):
         "any client engagement, and none of it may be used as an industry "
         "benchmark.")
     add("")
-    add(f"*Generated {date.today().isoformat()} — regenerate with three commands, see README.*")
+    # No generation date in the file. The report is version-controlled, and a
+    # date stamp would make it differ from itself every time anyone rebuilds
+    # it on a different day -- destroying the reproducibility the README
+    # claims. The date belongs to the run, not to the artefact.
+    add("*Regenerate with three commands — see README. Output is byte-identical on any machine.*")
     add("")
     add("---")
     add("")
@@ -300,7 +303,9 @@ def main():
 
     report = build(scores)
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-    with open(args.out, "w", encoding="utf-8") as handle:
+    # newline="\n" is required: on Windows, Python translates "\n" to CRLF
+    # in text mode, which makes a regenerated report look modified to Git.
+    with open(args.out, "w", encoding="utf-8", newline="\n") as handle:
         handle.write(report)
     print(f"Report written to {args.out} ({len(report.splitlines())} lines)")
 
