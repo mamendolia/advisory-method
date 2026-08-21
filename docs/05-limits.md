@@ -65,7 +65,20 @@ rate by several points and the unit jumps bands between periods for reasons
 that are pure sampling noise. The suppression floor of ten people protects
 privacy; it does not make units of thirty statistically meaningful.
 
-## 7. The score invites false precision
+## 7. Attribution depends on a control arm that was not randomised
+
+The longitudinal method in `docs/06` removes campaign drift by comparing
+against units that received no intervention. Those units were not chosen at
+random: they were scheduled later because they ranked lower on exposure. If
+the reason a unit ranks lower also makes it less likely to improve, the
+difference-in-differences estimate is biased, and the direction of that bias
+is not knowable from the data.
+
+Staggered rollout is the best available design that does not require
+withholding training from anyone. It is not a randomised trial and should never
+be described as one.
+
+## 8. The score invites false precision
 
 CES* is reported to one decimal place, which is one decimal place more than
 the model deserves. It is retained only so that ordering is deterministic. Any

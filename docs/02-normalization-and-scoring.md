@@ -111,6 +111,54 @@ to provoke.
 `CC` uses the minimum rather than the mean of the two coverages because a
 compound score cannot be more trustworthy than its weaker input.
 
+### It is not a statistical confidence
+
+The name collides with a term of art and the collision is worth stating
+plainly. Coverage Confidence is **not** a confidence interval, a p-value, or
+any statement about sampling uncertainty. It is a plain proportion: how much of
+the unit was actually measured. It answers "how much of this unit did we look
+at", not "how sure are we about the number".
+
+Real statistical confidence appears elsewhere in this repository — the
+period-over-period analysis in `docs/06` reports 95% intervals in the ordinary
+sense. The two are unrelated. If you are reading a table and cannot tell which
+is which: intervals are written in brackets and apply to changes; CC is a
+single number between 0 and 1 and applies to a period.
+
+### Worked example
+
+Take Operations - Poland from the sample output.
+
+    person coverage  0.377   (of its headcount, this share is enrolled)
+    asset coverage   0.548   (of its known assets, this share is scanned)
+
+    CC = min(0.377, 0.548) = 0.377
+
+    HRI = 32.75   TRI = 92.51
+    CES = sqrt(32.75 x 92.51) = 55.04
+
+    denominator = 0.50 + 0.50 x 0.377 = 0.689
+    CES* = 55.04 / 0.689 = 79.97
+
+So a raw compound score of 55 is reported as 80. The unit did not become more
+exposed; the score says that roughly six people in ten are invisible to the
+measurement, and a number built on the visible four cannot be taken at face
+value.
+
+Two sanity checks on the arithmetic:
+
+- At CC = 1.00 the denominator is 1.00 and CES* equals CES exactly. Full
+  measurement, no correction.
+- At CC = 0.00 the denominator is 0.50 and CES* is twice CES, capped at 100.
+  That factor of two is the maximum penalty the model will apply, and it is
+  chosen rather than derived — there is no theory behind it. It is large
+  enough to move a unit up the ranking and small enough not to put every
+  unmeasured unit at the top regardless of everything else.
+
+Compare with IT & Infrastructure at CC 0.994: CES 8.43, CES* 8.46. Where
+measurement is complete, the correction does essentially nothing, which is the
+intended behaviour.
+
 ## Normalisation across periods
 
 Scores are normalised against **fixed absolute bounds**, never against the

@@ -68,6 +68,15 @@ A unit that never handles payments does not need invoice-fraud simulations.
 Matching the pretext family to the unit's actual exposure is what separates a
 programme from a compliance exercise.
 
+## From segmentation to measurement
+
+Segmenting correctly is what makes the next period's comparison meaningful. If
+the intervention was matched to the unit and the lure family was matched to the
+unit's real work, a change can be attributed to something specific. If a
+generic programme was deployed uniformly, any change that appears is
+uninterpretable, because there is nothing to attribute it to. The method for
+testing attribution is in `docs/06-measuring-change.md`.
+
 ## Comparability rules
 
 Period-over-period movement is meaningless unless campaign difficulty is held

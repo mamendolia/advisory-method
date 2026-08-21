@@ -1,0 +1,236 @@
+{
+  "units": [
+    {
+      "unit_id": "OPS_PL",
+      "unit_name": "Operations - Poland",
+      "headcount": 300,
+      "business_criticality": 3,
+      "HRI": 31.56,
+      "TRI": 85.59,
+      "CES": 51.97,
+      "CES_corrected": 75.14,
+      "coverage_confidence": 0.383,
+      "person_coverage": 0.383,
+      "asset_coverage": 0.548,
+      "human": {
+        "phish_prone_rate": 26.81,
+        "report_rate": 3.96,
+        "training_gap_rate": 50.72,
+        "credential_conversion_rate": 37.7,
+        "measured_people": 115
+      },
+      "technical": {
+        "top_quartile_assets": 66,
+        "weighted_severity": 89.18,
+        "mean_age_critical_days": 139.0,
+        "kev_findings": 29,
+        "measured_assets": 263
+      },
+      "rank_corrected": 1,
+      "rank_raw": 1
+    },
+    {
+      "unit_id": "OPS_IT_B",
+      "unit_name": "Operations - Site B",
+      "headcount": 360,
+      "business_criticality": 3,
+      "HRI": 20.55,
+      "TRI": 76.75,
+      "CES": 39.71,
+      "CES_corrected": 47.58,
+      "coverage_confidence": 0.669,
+      "person_coverage": 0.669,
+      "asset_coverage": 0.807,
+      "human": {
+        "phish_prone_rate": 20.19,
+        "report_rate": 6.94,
+        "training_gap_rate": 36.62,
+        "credential_conversion_rate": 49.23,
+        "measured_people": 241
+      },
+      "technical": {
+        "top_quartile_assets": 117,
+        "weighted_severity": 85.23,
+        "mean_age_critical_days": 102.6,
+        "kev_findings": 29,
+        "measured_assets": 465
+      },
+      "rank_corrected": 2,
+      "rank_raw": 2
+    },
+    {
+      "unit_id": "OPS_IT_A",
+      "unit_name": "Operations - Site A",
+      "headcount": 440,
+      "business_criticality": 4,
+      "HRI": 15.75,
+      "TRI": 77.12,
+      "CES": 34.85,
+      "CES_corrected": 43.26,
+      "coverage_confidence": 0.611,
+      "person_coverage": 0.611,
+      "asset_coverage": 0.774,
+      "human": {
+        "phish_prone_rate": 19.79,
+        "report_rate": 10.98,
+        "training_gap_rate": 31.03,
+        "credential_conversion_rate": 51.2,
+        "measured_people": 269
+      },
+      "technical": {
+        "top_quartile_assets": 137,
+        "weighted_severity": 86.99,
+        "mean_age_critical_days": 97.4,
+        "kev_findings": 32,
+        "measured_assets": 545
+      },
+      "rank_corrected": 3,
+      "rank_raw": 3
+    },
+    {
+      "unit_id": "SALES",
+      "unit_name": "Sales & Marketing",
+      "headcount": 280,
+      "business_criticality": 3,
+      "HRI": 18.55,
+      "TRI": 59.49,
+      "CES": 33.22,
+      "CES_corrected": 34.94,
+      "coverage_confidence": 0.902,
+      "person_coverage": 0.925,
+      "asset_coverage": 0.902,
+      "human": {
+        "phish_prone_rate": 21.33,
+        "report_rate": 8.93,
+        "training_gap_rate": 32.1,
+        "credential_conversion_rate": 45.05,
+        "measured_people": 259
+      },
+      "technical": {
+        "top_quartile_assets": 101,
+        "weighted_severity": 73.3,
+        "mean_age_critical_days": 49.0,
+        "kev_findings": 8,
+        "measured_assets": 404
+      },
+      "rank_corrected": 4,
+      "rank_raw": 4
+    },
+    {
+      "unit_id": "CORP_UK",
+      "unit_name": "Corporate - UK",
+      "headcount": 160,
+      "business_criticality": 4,
+      "HRI": 2.81,
+      "TRI": 61.43,
+      "CES": 13.14,
+      "CES_corrected": 15.51,
+      "coverage_confidence": 0.694,
+      "person_coverage": 0.694,
+      "asset_coverage": 0.84,
+      "human": {
+        "phish_prone_rate": 13.23,
+        "report_rate": 21.58,
+        "training_gap_rate": 15.93,
+        "credential_conversion_rate": 52.63,
+        "measured_people": 111
+      },
+      "technical": {
+        "top_quartile_assets": 54,
+        "weighted_severity": 75.61,
+        "mean_age_critical_days": 51.0,
+        "kev_findings": 4,
+        "measured_assets": 215
+      },
+      "rank_corrected": 5,
+      "rank_raw": 6
+    },
+    {
+      "unit_id": "RND",
+      "unit_name": "R&D",
+      "headcount": 220,
+      "business_criticality": 4,
+      "HRI": 2.61,
+      "TRI": 69.38,
+      "CES": 13.46,
+      "CES_corrected": 14.78,
+      "coverage_confidence": 0.821,
+      "person_coverage": 0.918,
+      "asset_coverage": 0.821,
+      "human": {
+        "phish_prone_rate": 11.1,
+        "report_rate": 17.02,
+        "training_gap_rate": 17.42,
+        "credential_conversion_rate": 40.0,
+        "measured_people": 202
+      },
+      "technical": {
+        "top_quartile_assets": 73,
+        "weighted_severity": 85.97,
+        "mean_age_critical_days": 55.2,
+        "kev_findings": 27,
+        "measured_assets": 289
+      },
+      "rank_corrected": 6,
+      "rank_raw": 5
+    },
+    {
+      "unit_id": "FIN",
+      "unit_name": "Finance & Admin",
+      "headcount": 140,
+      "business_criticality": 5,
+      "HRI": 2.7,
+      "TRI": 52.18,
+      "CES": 11.87,
+      "CES_corrected": 12.14,
+      "coverage_confidence": 0.955,
+      "person_coverage": 0.993,
+      "asset_coverage": 0.955,
+      "human": {
+        "phish_prone_rate": 13.25,
+        "report_rate": 21.6,
+        "training_gap_rate": 14.11,
+        "credential_conversion_rate": 38.36,
+        "measured_people": 139
+      },
+      "technical": {
+        "top_quartile_assets": 54,
+        "weighted_severity": 66.83,
+        "mean_age_critical_days": 32.4,
+        "kev_findings": 1,
+        "measured_assets": 214
+      },
+      "rank_corrected": 7,
+      "rank_raw": 7
+    },
+    {
+      "unit_id": "IT",
+      "unit_name": "IT & Infrastructure",
+      "headcount": 100,
+      "business_criticality": 5,
+      "HRI": 1.11,
+      "TRI": 43.3,
+      "CES": 6.93,
+      "CES_corrected": 6.95,
+      "coverage_confidence": 0.994,
+      "person_coverage": 1.0,
+      "asset_coverage": 0.994,
+      "human": {
+        "phish_prone_rate": 6.05,
+        "report_rate": 47.7,
+        "training_gap_rate": 4.5,
+        "credential_conversion_rate": 48.0,
+        "measured_people": 100
+      },
+      "technical": {
+        "top_quartile_assets": 40,
+        "weighted_severity": 57.93,
+        "mean_age_critical_days": 16.5,
+        "kev_findings": 1,
+        "measured_assets": 159
+      },
+      "rank_corrected": 8,
+      "rank_raw": 8
+    }
+  ]
+}

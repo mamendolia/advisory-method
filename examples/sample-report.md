@@ -9,11 +9,11 @@
 
 ## 1. Executive summary
 
-Exposure across the organisation is **not uniform**. Operations - Poland scores 82.2 against 6.5 for IT & Infrastructure — a factor of 13 on the corrected compound score. Spending the awareness budget evenly across the population would direct most of it at people who are not the problem.
+Exposure across the organisation is **not uniform**. Operations - Poland scores 80.0 against 8.5 for IT & Infrastructure — a factor of 9 on the corrected compound score. Spending the awareness budget evenly across the population would direct most of it at people who are not the problem.
 
-**Operations - Poland carries the highest compound exposure (CES* 82.2, critical).** It combines a measured phish-prone rate of 32.9% with a reporting rate of only 3.3% and a mean age of 144 days on its worst technical findings. Neither vector alone would have put it first.
+**Operations - Poland carries the highest compound exposure (CES* 80.0, critical).** It combines a measured phish-prone rate of 28.0% with a reporting rate of only 3.8% and a mean age of 178 days on its worst technical findings. Neither vector alone would have put it first.
 
-**Measurement covers 72.2% of people and 79.8% of known assets.** Coverage is worst precisely where the raw scores are highest, which means the true position of those units is very probably worse than the raw numbers say.
+**Measurement covers 71.8% of people and 79.8% of known assets.** Coverage is worst precisely where the raw scores are highest, which means the true position of those units is very probably worse than the raw numbers say.
 
 **The confidence correction does not change the ranking this period.** Coverage differences exist but are not large enough to reorder units.
 
@@ -23,38 +23,38 @@ Exposure across the organisation is **not uniform**. Operations - Poland scores 
 
 | # | Business unit | Crit | HRI | TRI | CES | CES* | Confidence | Band |
 |---|---------------|------|-----|-----|-----|------|------------|------|
-| 1 | Operations - Poland | 3 | 37.7 | 86.2 | 57.0 | **82.2** | 0.39 | critical |
-| 2 | Operations - Site A | 4 | 31.8 | 78.5 | 50.0 | **63.7** | 0.57 | high |
-| 3 | Operations - Site B | 3 | 27.1 | 73.0 | 44.5 | **52.6** | 0.69 | high |
-| 4 | Sales & Marketing | 3 | 20.6 | 57.0 | 34.2 | **35.5** | 0.93 | moderate |
-| 5 | Corporate - UK | 4 | 8.9 | 57.6 | 22.7 | **26.1** | 0.74 | low |
-| 6 | Finance & Admin | 5 | 7.5 | 50.9 | 19.5 | **19.8** | 0.97 | low |
-| 7 | R&D | 4 | 2.8 | 63.8 | 13.3 | **14.2** | 0.87 | low |
-| 8 | IT & Infrastructure | 5 | 1.0 | 41.0 | 6.5 | **6.5** | 1.00 | low |
+| 1 | Operations - Poland | 3 | 32.8 | 92.5 | 55.0 | **80.0** | 0.38 | critical |
+| 2 | Operations - Site A | 4 | 31.1 | 79.4 | 49.7 | **61.6** | 0.61 | high |
+| 3 | Operations - Site B | 3 | 27.4 | 74.7 | 45.3 | **54.0** | 0.68 | high |
+| 4 | Sales & Marketing | 3 | 21.3 | 56.4 | 34.7 | **36.5** | 0.90 | moderate |
+| 5 | Corporate - UK | 4 | 7.7 | 60.5 | 21.6 | **25.6** | 0.69 | low |
+| 6 | R&D | 4 | 3.8 | 68.2 | 16.0 | **17.6** | 0.82 | low |
+| 7 | Finance & Admin | 5 | 3.0 | 51.8 | 12.4 | **12.6** | 0.95 | low |
+| 8 | IT & Infrastructure | 5 | 1.6 | 44.1 | 8.4 | **8.5** | 0.99 | low |
 
 ```
-Operations - Poland      #######################.....  82.2
-Operations - Site A      ##################..........  63.7
-Operations - Site B      ###############.............  52.6
-Sales & Marketing        ##########..................  35.5
-Corporate - UK           #######.....................  26.1
-Finance & Admin          ######......................  19.8
-R&D                      ####........................  14.2
-IT & Infrastructure      ##..........................   6.5
+Operations - Poland      ######################......  80.0
+Operations - Site A      #################...........  61.6
+Operations - Site B      ###############.............  54.0
+Sales & Marketing        ##########..................  36.5
+Corporate - UK           #######.....................  25.6
+R&D                      #####.......................  17.6
+Finance & Admin          ####........................  12.6
+IT & Infrastructure      ##..........................   8.5
 ```
 
 ## 3. The human vector in detail
 
 | Business unit | Phish-prone | Reporting | Training gap | Click→credential | People measured |
 |---------------|-------------|-----------|--------------|------------------|-----------------|
-| Operations - Poland | 32.9% | 3.3% | 55.4% | 43.7% | 116 |
-| Operations - Site A | 29.9% | 4.3% | 45.4% | 47.5% | 251 |
-| Operations - Site B | 28.6% | 6.6% | 38.4% | 45.9% | 249 |
-| Sales & Marketing | 24.6% | 8.6% | 30.6% | 43.2% | 267 |
-| Corporate - UK | 18.3% | 13.9% | 18.9% | 43.2% | 118 |
-| Finance & Admin | 19.4% | 15.4% | 15.2% | 45.4% | 139 |
-| R&D | 11.0% | 17.2% | 20.4% | 46.7% | 203 |
-| IT & Infrastructure | 5.6% | 44.8% | 4.3% | 40.9% | 100 |
+| Operations - Poland | 28.0% | 3.8% | 51.5% | 35.7% | 113 |
+| Operations - Site A | 30.1% | 5.2% | 44.6% | 48.3% | 270 |
+| Operations - Site B | 27.5% | 6.2% | 40.7% | 47.7% | 244 |
+| Sales & Marketing | 24.9% | 8.1% | 31.3% | 46.3% | 258 |
+| Corporate - UK | 15.9% | 14.1% | 20.7% | 55.6% | 110 |
+| R&D | 14.6% | 19.2% | 22.1% | 45.6% | 202 |
+| Finance & Admin | 17.2% | 21.0% | 9.5% | 44.2% | 139 |
+| IT & Infrastructure | 9.5% | 41.1% | 4.7% | 46.1% | 100 |
 
 Two readings deserve separating.
 
@@ -66,37 +66,37 @@ Two readings deserve separating.
 
 | Business unit | Weighted severity | Mean age of critical findings | KEV findings | Assets measured |
 |---------------|-------------------|-------------------------------|--------------|-----------------|
-| Operations - Poland | 88.9 | 144 d | 36 | 261 |
-| Operations - Site A | 85.9 | 111 d | 35 | 520 |
-| Operations - Site B | 83.5 | 87 d | 33 | 461 |
-| Sales & Marketing | 73.5 | 34 d | 4 | 417 |
-| Corporate - UK | 73.0 | 39 d | 4 | 211 |
-| Finance & Admin | 67.7 | 21 d | 0 | 217 |
-| R&D | 78.0 | 55 d | 7 | 307 |
-| IT & Infrastructure | 54.5 | 18 d | 0 | 160 |
+| Operations - Poland | 89.9 | 178 d | 21 | 263 |
+| Operations - Site A | 86.1 | 115 d | 32 | 545 |
+| Operations - Site B | 85.2 | 91 d | 23 | 465 |
+| Sales & Marketing | 70.8 | 41 d | 7 | 404 |
+| Corporate - UK | 75.2 | 47 d | 4 | 215 |
+| R&D | 82.8 | 62 d | 13 | 289 |
+| Finance & Admin | 66.7 | 31 d | 2 | 214 |
+| IT & Infrastructure | 58.9 | 18 d | 0 | 159 |
 
 Severity is read off the worst quartile of each estate, weighted by asset criticality. A mean over the whole estate would let a unit improve its score by owning more uninteresting machines.
 
 ## 5. Priority segments
 
-**Operations - Poland** — 300 people, business criticality 3, CES* 82.2
+**Operations - Poland** — 300 people, business criticality 3, CES* 80.0
 
-- Reporting sits at 3.3%. The dominant gap is detection, not knowledge. Training content will not move this number; a one-click reporting path and a visible response to reports will.
-- 55.4% of assigned training is outstanding. Check whether this is refusal or scheduling: shift workers without desk time do not fail training, they never get offered it.
-- Critical findings are averaging 144 days. At that latency the technical vector is the constraint, and human-side improvement will not reduce compound exposure much.
-- Confidence is 0.39. Before investing in remediation here, close the measurement gap — otherwise the next report cannot show whether anything worked.
+- Reporting sits at 3.8%. The dominant gap is detection, not knowledge. Training content will not move this number; a one-click reporting path and a visible response to reports will.
+- 51.5% of assigned training is outstanding. Check whether this is refusal or scheduling: shift workers without desk time do not fail training, they never get offered it.
+- Critical findings are averaging 178 days. At that latency the technical vector is the constraint, and human-side improvement will not reduce compound exposure much.
+- Confidence is 0.38. Before investing in remediation here, close the measurement gap — otherwise the next report cannot show whether anything worked.
 
-**Operations - Site A** — 440 people, business criticality 4, CES* 63.7
+**Operations - Site A** — 440 people, business criticality 4, CES* 61.6
 
-- Reporting sits at 4.3%. The dominant gap is detection, not knowledge. Training content will not move this number; a one-click reporting path and a visible response to reports will.
-- 45.4% of assigned training is outstanding. Check whether this is refusal or scheduling: shift workers without desk time do not fail training, they never get offered it.
-- Critical findings are averaging 111 days. At that latency the technical vector is the constraint, and human-side improvement will not reduce compound exposure much.
-- Confidence is 0.57. Before investing in remediation here, close the measurement gap — otherwise the next report cannot show whether anything worked.
+- Reporting sits at 5.2%. The dominant gap is detection, not knowledge. Training content will not move this number; a one-click reporting path and a visible response to reports will.
+- 44.6% of assigned training is outstanding. Check whether this is refusal or scheduling: shift workers without desk time do not fail training, they never get offered it.
+- Critical findings are averaging 115 days. At that latency the technical vector is the constraint, and human-side improvement will not reduce compound exposure much.
 
-**Operations - Site B** — 360 people, business criticality 3, CES* 52.6
+**Operations - Site B** — 360 people, business criticality 3, CES* 54.0
 
-- Reporting sits at 6.6%. The dominant gap is detection, not knowledge. Training content will not move this number; a one-click reporting path and a visible response to reports will.
-- 38.4% of assigned training is outstanding. Check whether this is refusal or scheduling: shift workers without desk time do not fail training, they never get offered it.
+- Reporting sits at 6.2%. The dominant gap is detection, not knowledge. Training content will not move this number; a one-click reporting path and a visible response to reports will.
+- 40.7% of assigned training is outstanding. Check whether this is refusal or scheduling: shift workers without desk time do not fail training, they never get offered it.
+- Critical findings are averaging 91 days. At that latency the technical vector is the constraint, and human-side improvement will not reduce compound exposure much.
 
 ## 6. What this report does not tell you
 
@@ -128,16 +128,18 @@ Scoring formulas, weights and their rationale: `docs/02-normalization-and-scorin
 
 ## Appendix B — Coverage
 
+Confidence is the smaller of the two coverage figures on each row. It is a proportion of the unit that was measured, not a statistical confidence: a unit at 0.40 had roughly six people in ten invisible to the measurement. The corrected score divides the raw score by (0.50 + 0.50 x confidence), so full coverage leaves the score untouched and zero coverage doubles it. Method: `docs/02-normalization-and-scoring.md`.
+
 | Business unit | People measured | Person coverage | Asset coverage | Confidence |
 |---------------|-----------------|-----------------|----------------|------------|
-| Operations - Poland | 116 / 300 | 38.7% | 54.4% | 0.39 |
-| Operations - Site A | 251 / 440 | 57.0% | 73.9% | 0.57 |
-| Operations - Site B | 249 / 360 | 69.2% | 80.0% | 0.69 |
-| Sales & Marketing | 267 / 280 | 95.4% | 93.1% | 0.93 |
-| Corporate - UK | 118 / 160 | 73.8% | 82.4% | 0.74 |
-| Finance & Admin | 139 / 140 | 99.3% | 96.9% | 0.97 |
-| R&D | 203 / 220 | 92.3% | 87.2% | 0.87 |
-| IT & Infrastructure | 100 / 100 | 100.0% | 100.0% | 1.00 |
+| Operations - Poland | 113 / 300 | 37.7% | 54.8% | 0.38 |
+| Operations - Site A | 270 / 440 | 61.4% | 77.4% | 0.61 |
+| Operations - Site B | 244 / 360 | 67.8% | 80.7% | 0.68 |
+| Sales & Marketing | 258 / 280 | 92.1% | 90.2% | 0.90 |
+| Corporate - UK | 110 / 160 | 68.8% | 84.0% | 0.69 |
+| R&D | 202 / 220 | 91.8% | 82.1% | 0.82 |
+| Finance & Admin | 139 / 140 | 99.3% | 95.5% | 0.95 |
+| IT & Infrastructure | 100 / 100 | 100.0% | 99.4% | 0.99 |
 
 ## Appendix C — Indicator glossary
 

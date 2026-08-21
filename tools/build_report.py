@@ -267,6 +267,14 @@ def build(scores):
     add("")
     add("## Appendix B — Coverage")
     add("")
+    add("Confidence is the smaller of the two coverage figures on each row. It "
+        "is a proportion of the unit that was measured, not a statistical "
+        "confidence: a unit at 0.40 had roughly six people in ten invisible to "
+        "the measurement. The corrected score divides the raw score by "
+        "(0.50 + 0.50 x confidence), so full coverage leaves the score "
+        "untouched and zero coverage doubles it. Method: "
+        "`docs/02-normalization-and-scoring.md`.")
+    add("")
     add("| Business unit | People measured | Person coverage | Asset coverage | Confidence |")
     add("|---------------|-----------------|-----------------|----------------|------------|")
     for u in ranked:

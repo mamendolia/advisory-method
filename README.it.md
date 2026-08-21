@@ -39,6 +39,23 @@ misurata non è un'unità senza problemi: è un'unità di cui non si sa nulla. L
 correzione è un bias dichiarato, non neutrale, e serve a rendere sconveniente
 togliere dal perimetro le popolazioni scomode.
 
+## Misurazione del cambiamento nel tempo
+
+Il documento [`docs/06-measuring-change.md`](docs/06-measuring-change.md)
+affronta la domanda che un cliente pone per seconda e a cui tiene di più: *è
+cambiato qualcosa?* Confrontare due tassi aggregati non basta, per quattro
+ragioni — il turnover della popolazione, la difficoltà variabile della
+campagna, il rumore campionario e la regressione verso la media. Il metodo usa
+una coorte chiusa, un braccio di controllo ottenuto tramite rilascio scaglionato
+(nessuno viene privato della formazione: le unità pianificate più tardi fanno da
+controfattuale per quelle formate prima) e una stima
+differenza-nelle-differenze.
+
+Nell'esempio incluso un'unità mostra un miglioramento statisticamente
+significativo che sparisce del tutto una volta considerato il braccio di
+controllo: il tasso era sceso perché la seconda campagna era più facile, non
+perché il programma avesse funzionato.
+
 ## Rilevanza normativa
 
 Il documento [`docs/04-nis2-article-20.md`](docs/04-nis2-article-20.md) mappa
@@ -63,12 +80,27 @@ D.Lgs. 138/2024.
 
 ## Esecuzione
 
-Solo libreria standard Python, nessuna dipendenza esterna.
+Python 3.9 o successivo. **Nessuna dipendenza esterna, nessun ambiente
+virtuale, nessuna installazione**: i tool usano solo la libreria standard.
+
+L'interprete si invoca in modo diverso a seconda del sistema operativo:
+
+| Sistema | Comando |
+|---------|---------|
+| Linux, macOS | `python3` |
+| Windows | `py` (oppure `python`) — `python3` viene intercettato dall'alias del Microsoft Store e fallisce |
+
+I comandi qui sotto usano `python3`. Su Windows sostituire con `py`.
 
 ```bash
-python3 tools/generate_synthetic_data.py --users 2000 --outdir data/synthetic
-python3 tools/compute_exposure.py
-python3 tools/build_report.py
+python3 tools/generate_synthetic_data.py --users 2000 --period P1 --outdir data/synthetic
+python3 tools/compute_exposure.py --indir data/synthetic --out data/scores.json
+python3 tools/build_report.py --scores data/scores.json --out examples/sample-report.md
+
+python3 tools/generate_synthetic_data.py --users 2000 --period P2 --outdir data/synthetic-p2
+python3 tools/compute_exposure.py --indir data/synthetic-p2 --out data/scores-p2.json
+
+python3 tools/compare_periods.py
 ```
 
 Il seed è fisso: ogni clone produce output identico byte per byte.

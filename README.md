@@ -13,19 +13,40 @@ cannot support.
 
 ## Run it
 
-No dependencies beyond the Python standard library.
+Python 3.9 or later. **No third-party packages, no virtual environment, no
+installation step** — the tools use only the standard library.
+
+The interpreter is invoked differently by platform, which is the first thing
+that trips people up:
+
+| Platform | Command |
+|----------|---------|
+| Linux, macOS | `python3` |
+| Windows | `py` (or `python`) — `python3` is intercepted by the Microsoft Store alias and will fail |
+
+The commands below use `python3`. On Windows, substitute `py`.
 
 ```bash
-python3 tools/generate_synthetic_data.py --users 2000 --outdir data/synthetic
-python3 tools/compute_exposure.py
-python3 tools/build_report.py
+# period 1 — baseline
+python3 tools/generate_synthetic_data.py --users 2000 --period P1 --outdir data/synthetic
+python3 tools/compute_exposure.py --indir data/synthetic --out data/scores.json
+python3 tools/build_report.py --scores data/scores.json --out examples/sample-report.md
+
+# period 2 — after intervention
+python3 tools/generate_synthetic_data.py --users 2000 --period P2 --outdir data/synthetic-p2
+python3 tools/compute_exposure.py --indir data/synthetic-p2 --out data/scores-p2.json
+
+# did anything actually change?
+python3 tools/compare_periods.py
 ```
 
 The seed is fixed, so every clone produces byte-identical output. That
 reproducibility is how you can tell the data is synthetic — a disclaimer in a
 README proves nothing, a fixed seed proves it.
 
-Result: [`examples/sample-report.md`](examples/sample-report.md).
+Results: [`examples/sample-report.md`](examples/sample-report.md) — where the
+exposure is; [`examples/sample-change-analysis.md`](examples/sample-change-analysis.md)
+— whether anything changed.
 
 ## The method in six steps
 
@@ -39,10 +60,17 @@ Result: [`examples/sample-report.md`](examples/sample-report.md).
    so that only units exposed on both vectors rank at the top.
 5. **Correct for data confidence**, inflating the score where coverage is thin,
    so that unmeasured populations cannot pass as safe ones.
-6. **Recommend**, with a declared verification criterion attached to every
+6. **Segment** the prioritised units, matching the intervention — and the
+   lure family used to test it — to what that unit's work actually looks like.
+   A function that approves invoices by email does not have the same exposure
+   as one that never handles payments.
+7. **Recommend**, with a declared verification criterion attached to every
    recommendation.
+8. **Measure the change** at the next period on a closed cohort, against a
+   control arm, so the answer to "did it work" is evidence rather than
+   assertion.
 
-## Two design decisions worth arguing about
+## Three design decisions worth arguing about
 
 **Reporting rate carries the same weight as click rate, with the opposite
 sign.** A click creates an incident someone has to discover; a report creates
@@ -51,6 +79,15 @@ rate are not in the same position if one reports at 30% and the other at 3%.
 Most reporting treats the phish-prone rate as the headline and reporting as a
 nicety, and that ordering is backwards. See
 [`docs/02`](docs/02-normalization-and-scoring.md).
+
+**Attribution requires a control arm, and you get one without withholding
+training.** Comparing two aggregate click rates cannot distinguish a working
+programme from an easier campaign or from staff turnover. The fix is a
+staggered rollout: every unit is trained, in the order the exposure ranking
+already dictates, and the units scheduled later serve as the counterfactual for
+the ones trained earlier. In the worked example this matters — one unit shows a
+statistically significant improvement that disappears entirely once the control
+arm is accounted for. See [`docs/06`](docs/06-measuring-change.md).
 
 **Missing data raises the score, never lowers it.** A unit that is not measured
 is not a unit with a clean record. The correction is a deliberate bias — it is
@@ -66,14 +103,17 @@ docs/
   03-segmentation-and-indicators.md The indicator hierarchy and how to segment a prioritised unit
   04-nis2-article-20.md            What this evidences under NIS2, and what it does not
   05-limits.md                     Known failure modes, including the unsolved ones
+  06-measuring-change.md           Longitudinal method: cohorts, control arms, what noise looks like
 tools/
   generate_synthetic_data.py       Fixed-seed dataset with deliberately heterogeneous units
   compute_exposure.py              HRI, TRI, CES, coverage confidence
   build_report.py                  Scores to a directional report
+  compare_periods.py               Period-over-period change with attribution testing
 templates/
   human-risk-reduction-report.md   The report structure, empty
 examples/
-  sample-report.md                 Generated output, regenerable in three commands
+  sample-report.md                 Single-period output, regenerable from the commands above
+  sample-change-analysis.md        Period-over-period output, with attribution
 ```
 
 ## Scope and honesty notes
